@@ -1,0 +1,25 @@
+{
+  "name": "@padcom/vite-plugin-federation",
+  "version": "0.0.1",
+  "description": "Vite federation plugin automatic configurator",
+  "keywords": [],
+  "license": "MIT",
+  "author": "Matthias Hryniszak <padcom@gmail.com>",
+  "homepage": "https://github.com/padcom/vite-plugin-federation#readme",
+  "bugs": {
+    "url": "https://github.com/padcom/vite-plugin-federation/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/padcom/vite-plugin-federation.git"
+  },
+
+  "dependencies": {
+    "@originjs/vite-plugin-federation": "^1.1.6"
+  },
+
+  "main": "index.js",
+  "scripts": {
+    "prepublishOnly": "npm install"
+  }
+}
