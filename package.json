@@ -1,6 +1,6 @@
 {
   "name": "@padcom/vite-plugin-federation",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Vite federation plugin automatic configurator",
   "keywords": [],
   "license": "MIT",
@@ -13,11 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/padcom/vite-plugin-federation.git"
   },
-
   "dependencies": {
-    "@originjs/vite-plugin-federation": "^1.1.6"
+    "@originjs/vite-plugin-federation": "^1.1.6",
+    "dotenv": "^16.0.1"
   },
-
   "main": "index.js",
   "scripts": {
     "prepublishOnly": "npm install"
