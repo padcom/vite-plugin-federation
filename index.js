@@ -6,14 +6,12 @@ function getLibraryName() {
 }
 
 module.exports = function(options = {}) {
-  options = {
-    name: federation.name || getLibraryName(),
-    shared: dependencies,
-    exposes: federation.exposes || {
-      './root': './src/index.js'
-    },
-    ...options
-  }
+  const name = federation.name || getLibraryName()
+  const remotes = federation.remotes || {}
+  const exposes = federation.remotes ? federation.exposes : (federation.exposes || { './root': './src/index.js' })
+  const shared = dependencies
 
-  return federationPlugin(options)
+  console.log('options', { name, remotes, exposes, shared, ...options })
+
+  return federationPlugin({ name, remotes, exposes, shared, ...options })
 }
