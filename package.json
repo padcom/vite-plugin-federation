@@ -1,6 +1,6 @@
 {
   "name": "@padcom/vite-plugin-federation",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Vite federation plugin automatic configurator",
   "keywords": [],
   "license": "MIT",

@@ -1,7 +1,7 @@
 const { resolve } = require('path')
 const federationPlugin = require('@originjs/vite-plugin-federation')
 
-const { name, dependencies, federation } = require(resolve(process.cwd(), 'package.json'))
+const { name, dependencies, federation = {} } = require(resolve(process.cwd(), 'package.json'))
 
 function getLibraryName() {
   return name.split('/').at(-1).replaceAll('-', '_')
