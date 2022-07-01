@@ -20,9 +20,14 @@ vite.config.js:
 import { defineConfig } from 'vite'
 import federation from '@padcom/vite-plugin-federation'
 
-export default {
-  plugins: [ federation() ]
-}
+export default defineConfig(config => ({
+  build: {
+    target: 'esnext',
+  },
+  plugins: [
+    federation({ mode: config.mode }),
+  ],
+}))
 ```
 
 That's it! No more manual federation configuration!
