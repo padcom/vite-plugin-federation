@@ -11,6 +11,7 @@ module.exports = function(options = {}) {
   const mode = options.mode || 'development'
 
   const envFileName = resolve(process.cwd(), '.env')
+  require('dotenv').config({ path: envFileName + '.' + mode + '.local' })
   require('dotenv').config({ path: envFileName + '.' + mode })
   require('dotenv').config({ path: envFileName })
 
