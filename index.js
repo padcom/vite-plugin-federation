@@ -8,17 +8,19 @@ function getLibraryName() {
 }
 
 module.exports = function(options = {}) {
-  const mode = options.mode || 'development'
+  const mode = options.mode || process.env.NODE_ENV || 'development'
 
   const envFileName = resolve(process.cwd(), '.env')
   require('dotenv').config({ path: envFileName + '.' + mode + '.local' })
   require('dotenv').config({ path: envFileName + '.' + mode })
+  require('dotenv').config({ path: envFileName + '.local' })
   require('dotenv').config({ path: envFileName })
 
   const name = federation.name || getLibraryName()
   const remotes = federation.remotes || {}
   Object.keys(remotes).forEach(remote => {
     if (process.env[remotes[remote]]) remotes[remote] = process.env[remotes[remote]]
+    if (options.debug) console.log('[remote]', remote, '->', remotes[remote])
   })
   const exposes = federation.remotes ? federation.exposes : (federation.exposes || {
     './root': './src/index.js'
