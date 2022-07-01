@@ -11,7 +11,5 @@ module.exports = function(options = {}) {
   const exposes = federation.remotes ? federation.exposes : (federation.exposes || { './root': './src/index.js' })
   const shared = dependencies
 
-  console.log('options', { name, remotes, exposes, shared, ...options })
-
   return federationPlugin({ name, remotes, exposes, shared, ...options })
 }
